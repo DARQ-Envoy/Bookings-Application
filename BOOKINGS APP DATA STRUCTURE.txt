@@ -1,0 +1,9 @@
+                                                                    BOOKINGS APP DATA STRUCTURE
+
+
+Table:
+no: number
+seating capacity: number
+price: number
+description: string
+isBooked: boolean

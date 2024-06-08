@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Welcome {{user.username}}</h1>
+
+<div>
+    <h4>Tables</h4>
+
+        {% for table in all_tables %}
+        <!-- {{table}} -->
+        <ul>
+            <li>
+                    {{table.no}}
+            </li>
+            <li>
+                {{table.seating_capacity}}
+            </li>
+            <li>
+                {{table.is_booked}}
+            </li>
+            <li>
+                {{table.price}}
+            </li>
+            <li>
+                {{table.description}}
+        </li>
+
+        </ul>
+
+        {% endfor %}
+
+
+</div>
+<a href="{% url 'bookings'%}">View BookedTables</a>
+<a href="{% url 'logout' %}">Logout</a>
+{% endblock content%}

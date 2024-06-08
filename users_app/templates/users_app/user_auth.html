@@ -1,0 +1,27 @@
+{% extends "base.html"%}
+
+{% block content %}
+
+
+{% if to_login  %}
+<h1>login to continue</h1>
+{% else  %}
+<h1>Signup to continue</h1>
+{% endif %}
+
+<form action="" method="Post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit"/>
+</form>
+
+{% if to_login %}
+
+<small>Don't have an account, <a href="{% url 'signup' %}">Sign up</a></small>
+
+{% else %}
+
+<small>Got an account, <a href="{% url 'login' %}">Login</a></small>
+
+{% endif %}
+{% endblock %}

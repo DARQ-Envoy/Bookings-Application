@@ -1,0 +1,32 @@
+{% extends 'base.html'%}
+{% block header %}
+{% load static %}
+<link rel="stylesheet" href=" {% static 'css/index.css' %} ">
+{% endblock %}
+
+{% block content %}
+<h1 class="booking-heading">Booked Tables </h1>
+
+{%if booked_tables %}
+<div>
+    <div id="table-headings">
+        <ul>
+            <li>Number</li>
+            <li>Capacity</li>
+            <li>Is_booked</li>
+            <li>Price</li>
+            <li>Description</li>
+        </ul>
+    </div>
+    {% for table in booked_tables %}
+    <ul>
+        <li>{{table.booking_set.user}}</li>
+        <li>{{table.seating_capacity}}</li>
+        <li>{{table.is_booked}}</li>
+        <li> {{table.price}}</li>
+        <li> {{table.description}}</li>       
+    </ul>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock content %}

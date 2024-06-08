@@ -1,0 +1,18 @@
+{% extends "base.html"%}
+
+
+{% block content %}
+
+
+<h3>Welcome!!!</h3>
+
+{% if user_logged_in %}
+<a href="{% url 'dashboard' %}">Make your bookings</a>
+{% else %}
+<a href="{% url 'login' %}">login</a>
+
+
+{% endif %}
+
+
+{% endblock %}
